@@ -1,0 +1,24 @@
+Historias De Usuarios
+•	Control de Acceso de los Administradores. --> Boton Desplegable
+•	Historia Clínicas. --> Boton Desplegable
+•	Hoja de Evoluciones. --> Boton Desplegable
+•	Agendar Citas --> ever
+•	Factura de Compra. ---> Nav
+•	Formula de Medicamentos. ---> Nav
+•	Pedido de Cliente. 
+•	Control de Inventario. --> Boton Desplegable
+•	Garantias. ---> Nav
+•	Pago de Nómina.
+•	Control de Producto.
+•	Pedido de Laboratorio.
+•	Consentimiento Informado.
+•	Formula de Lente.
+•	Cartera (Cliente y Proveedores).
+•	Exámenes Externos (imagen y Radio Grafías). ---> Nav
+•	Diagnostico. ---> Nav
+•	Procedimientos. ---> Nav
+•	Recetario de Exámenes. ---> Nav
+•	Registro de Usuario.
+•	Consulta de Entrega de Producto.
+•	Cancelacion de Citas
+•	Notificacion de Usuario
