@@ -228,7 +228,7 @@
                  <h4 class="mdl-card__title-text">Historia Clinica</h4>
               </div>
               <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Four tips to make your switch to Android quick and easy</span>
+                <span class="mdl-typography--font-light mdl-typography--subhead">Descarga tu historia clinica con solo un paso, click aqui.</span>
               </div>
               <div class="mdl-card__actions">
                  <a class="optic-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
@@ -246,7 +246,7 @@
                  <h4 class="mdl-card__title-text">Hoja de evoluciones</h4>
               </div>
               <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Turn the little green Android mascot into you, your friends, anyone!</span>
+                <span class="mdl-typography--font-light mdl-typography--subhead">Checa tu hoja de evolucion medica para ver los resultados de las citas que has tenido.</span>
               </div>
               <div class="mdl-card__actions">
                  <a class="optic-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
@@ -264,7 +264,7 @@
                  <h4 class="mdl-card__title-text">Pago de nomina</h4>
               </div>
               <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">A clean, simple, customisable home screen that comes with the power of Google Now: Traffic alerts, weather and much more, just a swipe away.</span>
+                <span class="mdl-typography--font-light mdl-typography--subhead">Si eres de nuestro equipo de trabajo, puedes solicitar tu pago de nomina solo ingresando tu documento y contraseña proporcionada.</span>
               </div>
               <div class="mdl-card__actions">
                  <a class="optic-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
@@ -282,7 +282,7 @@
                  <h4 class="mdl-card__title-text">Forumla asignada</h4>
               </div>
               <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Hail a taxi, find a recipe, run through a temple – Google Play has all the apps and games that let you make your Android device uniquely yours.</span>
+                <span class="mdl-typography--font-light mdl-typography--subhead">Si tienes una formula medica asignada puedes revisar el estado de ella y saber donde puedes reclamarla y cuando, solo accede en este apartado.</span>
               </div>
               <div class="mdl-card__actions">
                  <a class="optic-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">

@@ -2,50 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1250cff7-f99b-457e-bedf-1b9608240517" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ajax/login_admin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ajax/process_login.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ajax/process_register.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ajax/schedule_appointment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loginadmin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/UserSession.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/config.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/db.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/functions.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Historia/historiaP.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Historia/images/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Historia/images/der.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Historia/images/izq.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Historia/pacientecpdf.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Historia/pacientepdf.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Historia/pacienteslista.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recursos/materialize-v1.0.0-rc.2.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recursos/scriptOptica.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/materialize.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/materialize.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/formulario_medico.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/forrmula.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/inventario.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/login.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/s1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/s2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/s3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/s4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/materialize.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/materialize.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/conexion.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/principal.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requerimientos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requerimientos.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/proyecto-optica.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/proyecto-optica.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -88,57 +47,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ajax/process_register.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/loginadmin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="163" column="45" selection-start-line="163" selection-start-column="45" selection-end-line="163" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/register.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="258" selection-start-line="258" selection-end-line="258" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="167" selection-start-line="167" selection-end-line="167" />
-              <folding>
-                <element signature="e#14#121#0" />
-                <element signature="e#301#1430#0" />
-                <element signature="n#!!block;n#openDialog#0" />
-                <element signature="e#1917#3376#0" />
-                <element signature="e#2367#2493#0" />
-                <element signature="n#!!block;n#schedule#0" />
-                <element signature="n#!!block;n#dialogRequest#0" />
-                <element signature="e#3833#3841#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin.php">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="89" column="65" lean-forward="true" selection-start-line="89" selection-start-column="65" selection-end-line="89" selection-end-column="65" />
+            <state relative-caret-position="427">
+              <caret line="284" column="223" selection-start-line="284" selection-start-column="223" selection-end-line="284" selection-end-column="223" />
             </state>
           </provider>
         </entry>
@@ -186,7 +99,6 @@
         <option value="$PROJECT_DIR$/php/db.php" />
         <option value="$PROJECT_DIR$/ajax/process_register.php" />
         <option value="$PROJECT_DIR$/ajax/schedule_appointment.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/register.php" />
         <option value="$PROJECT_DIR$/ajax/process_login.php" />
         <option value="$PROJECT_DIR$/loginadmin.php" />
@@ -195,6 +107,7 @@
         <option value="$PROJECT_DIR$/ajax/login_admin.php" />
         <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/admin.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -206,7 +119,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1426" />
     <option name="y" value="45" />
-    <option name="width" value="2134" />
+    <option name="width" value="2135" />
     <option name="height" value="1150" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -220,23 +133,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="proyecto-optica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="proyecto-optica" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="proyecto-optica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="proyecto-optica" type="462c0819:PsiDirectoryNode" />
-              <item name="ajax" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="proyecto-optica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="proyecto-optica" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="proyecto-optica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="proyecto-optica" type="462c0819:PsiDirectoryNode" />
-              <item name="php" type="462c0819:PsiDirectoryNode" />
+              <item name="Optica-ijc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Optica-ijc" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -297,11 +195,12 @@
       <workItem from="1540898989081" duration="16389000" />
       <workItem from="1540947885822" duration="20889000" />
       <workItem from="1540985169485" duration="16110000" />
+      <workItem from="1547302895003" duration="1347000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76496000" />
+    <option name="totallyTimeSpent" value="77843000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -313,10 +212,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1359" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="1359" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16823056" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17001338" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -395,9 +294,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cb43daab-d26e-4599-ab33-b1cd7ba3ab0c/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cb43daab-d26e-4599-ab33-b1cd7ba3ab0c/console.sql" />
     <entry file="das://cb43daab-d26e-4599-ab33-b1cd7ba3ab0c/schema/opticadatabase/table/acces_user">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -451,27 +348,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="368" column="12" lean-forward="true" selection-start-line="368" selection-start-column="12" selection-end-line="369" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ajax/process_register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loginadmin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="163" column="45" selection-start-line="163" selection-start-column="45" selection-end-line="163" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
@@ -497,16 +373,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ajax/process_register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="26" column="28" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loginadmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3260">
+          <caret line="163" column="45" selection-start-line="163" selection-start-column="45" selection-end-line="163" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
+        <state relative-caret-position="5160">
           <caret line="258" selection-start-line="258" selection-end-line="258" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
+        <state relative-caret-position="1200">
           <caret line="167" selection-start-line="167" selection-end-line="167" />
           <folding>
             <element signature="e#14#121#0" />
@@ -516,15 +406,21 @@
             <element signature="e#2367#2493#0" />
             <element signature="n#!!block;n#schedule#0" />
             <element signature="n#!!block;n#dialogRequest#0" />
-            <element signature="e#3833#3841#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="89" column="65" lean-forward="true" selection-start-line="89" selection-start-column="65" selection-end-line="89" selection-end-column="65" />
+        <state relative-caret-position="1780">
+          <caret line="89" column="65" selection-start-line="89" selection-start-column="65" selection-end-line="89" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="284" column="223" selection-start-line="284" selection-start-column="223" selection-end-line="284" selection-end-column="223" />
         </state>
       </provider>
     </entry>
