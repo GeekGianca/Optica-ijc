@@ -342,12 +342,12 @@
     <script src="js/app.js"></script>
     <!--Dialog For Quote-->
     <dialog class="mdl-dialog" id="dialog">
-        <h4 class="mdl-dialog__title">Solicita tu cita</h4>
+        <h4 class="mdl-dialog__title">Solicita tu cita---</h4>
         <br>
         <div class="mdl-dialog__content">
             <div>Las solicitudes de cita de esta secion, seran revisadas en busca de disponibilidad, no se garantiza la hora y fecha de la cita solicitada, hasta revision</div>
             <br>
-            <form action="POST" id="form_appointment">
+            <form method="POST" id="form_appointment">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                     <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="iduser">
                     <label class="mdl-textfield__label" for="iduser">Digite su cedula</label>

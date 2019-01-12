@@ -48,6 +48,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
     <link rel="stylesheet" href="stylesadmin.css">
+    <script src="jquery/jquery-3.3.1.js"></script>
+    <script src="mdl/material.min.js"></script>
     <style>
     #view-source {
       position: fixed;
@@ -157,6 +159,6 @@
     </div>
       <!--<a target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">View Source</a>-->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/adminapp.js"></script>
   </body>
 </html>

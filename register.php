@@ -31,7 +31,6 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.css">
     <link rel="stylesheet" href="styles.css">
     <script src="jquery/jquery-3.3.1.js"></script>
-    <!--<link rel="stylesheet" href="mdl/material.css">-->
     <script src="mdl/material.min.js"></script>
     <style>
         #view-source {
@@ -164,7 +163,7 @@
                     </h2>
                 </div>
                 <div class="mdl-card__supporting-text">
-                    <form action="POST" id="formRegister" class="register">
+                    <form id="formRegister" class="register" method="POST">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                             <input maxlength="10" minlength="10" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="iduser">
                             <label class="mdl-textfield__label" for="iduser">Identificacion</label>
