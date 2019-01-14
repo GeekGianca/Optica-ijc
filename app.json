@@ -1,0 +1,19 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    }
+  ],
+  "description": "Management of optical consultations and medications for users of the same.",
+  "env": {
+  },
+  "formation": {
+  },
+  "name": "Optica-ijc",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
