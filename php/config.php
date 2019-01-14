@@ -7,7 +7,7 @@
 
 include_once 'db.php';
 $conn = Db::getConnection();*/
-define("DB_HOST", "192.168.1.6");
-define("DB_USER", "root");
-define("DB_PASSWORD", "admin");
+define("DB_HOST", "workstationdatabases.mysql.database.azure.com");
+define("DB_USER", "gksoftware@workstationdatabases");
+define("DB_PASSWORD", "admin_23");
 define("DB_DATABASE", "opticadatabase");
