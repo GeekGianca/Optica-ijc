@@ -275,7 +275,7 @@
 
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
-                <img src="images/more-from-3.png">
+                <img src="images/more-from-3.png" alt="">
               </div>
               <div class="mdl-card__title">
                  <h4 class="mdl-card__title-text">Forumla asignada</h4>
