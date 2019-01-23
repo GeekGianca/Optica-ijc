@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $database->checkUser($username, $pass);
     if ($user){
         $response = $user;
-        $response['redirect'] = "http://localhost/Optica-ijc/admin.php";
+        $response['redirect'] = "https://optica-ijc.herokuapp.com/Optica-ijc/admin.php";
     } else {
         $response['message'] = 'El usuario no tiene permisos de administrador, o no esta registrado';
         $response['exist'] = false;
