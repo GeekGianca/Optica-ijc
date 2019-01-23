@@ -13,7 +13,8 @@ $(document).on("submit", "#formRegister", function (event) {
     var $form = $(this);
     var data = $(this).serialize();
     console.log("Serialize: "+data);
-    var url_process = "http://localhost/Optica-ijc/ajax/process_register.php";
+    //http://localhost/Optica-ijc/ajax/process_register.php
+    var url_process = "https://opticaijc.herokuapp.com/ajax/process_register.php";
     var data_form = {
         iduser: $("#iduser").val(),
         name: $("#name").val(),
@@ -61,7 +62,8 @@ function openDialog(value, title) {
 
 $(document).on("submit", "#form_appointment", function () {
     event.preventDefault();
-    var url_process = "http://localhost/Optica-ijc/ajax/schedule_appointment.php";
+    //http://localhost/Optica-ijc/ajax/schedule_appointment.php
+    var url_process = "https://opticaijc.herokuapp.com/ajax/schedule_appointment.php";
     var progress = document.getElementById("progress");
     var error = document.getElementById("error_mssg");
     progress.style.display = 'block';
@@ -123,7 +125,8 @@ function dialogRequest(message) {
 
 $(document).on("submit", "#admin_form", function () {
     event.preventDefault();
-    var url_process = "http://localhost/Optica-ijc/ajax/login_admin.php";
+    //http://localhost/Optica-ijc/ajax/login_admin.php
+    var url_process = "https://opticaijc.herokuapp.com/ajax/login_admin.php";
     var progress = document.getElementById("progress");
     var error = document.getElementById("error_mssg");
     progress.style.display = 'block';

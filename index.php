@@ -49,7 +49,7 @@
       <div class="page-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="page-title mdl-layout-title">
-            <img id="imageHome" class="optic-logo-image" src="images/optica-logo.png">
+            <img id="imageHome" class="optic-logo-image" src="images/optica-logo.png" alt="">
           </span>
           <!-- Add spacer, to align navigation to the right in desktop -->
           <div class="page-header-spacer mdl-layout-spacer"></div>
