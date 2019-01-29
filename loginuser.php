@@ -25,8 +25,7 @@
     <title>Optica IJC</title>
 
     <!-- Page styles -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="mdl/mdl.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -37,7 +36,7 @@
 <body>
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <?php
-    include_once('header.php');
+        include_once('header.php');
     ?>
     <div class="android-content mdl-layout__content">
         <a name="top"></a>
@@ -46,20 +45,19 @@
             <!-- Simple Textfield -->
             <div class="mdl-card mdl-shadow--2dp" style="margin-left: 550px; margin-top: 80px; margin-bottom: 100px;">
                 <div class="mdl-card__title mdl-card--expand">
-                    <h2 class="mdl-card__title-text"><strong>Inicio Administrador</strong></h2>
+                    <h2 class="mdl-card__title-text"><strong>Inicio Usuario</strong></h2>
                 </div>
                 <div class="mdl-card__supporting-text">
-                    <form action="POST" id="admin_form">
+                    <form action="POST" id="user_form">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input required maxlength="10" minlength="10" class="mdl-textfield__input" type="text"
-                                   pattern="-?[0-9]*(\.[0-9]+)?" id="username">
-                            <label class="mdl-textfield__label" for="username">Usuario o Identificacion</label>
+                            <input required maxlength="10" minlength="10" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="usercommon">
+                            <label class="mdl-textfield__label" for="usercommon">Usuario o Identificacion</label>
                             <span class="mdl-textfield__error">Esto no parece ser correcto</span>
                         </div>
                         <br>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input required class="mdl-textfield__input" type="password" minlength="10" id="password">
-                            <label class="mdl-textfield__label" for="password">Contraseña</label>
+                            <input required class="mdl-textfield__input" type="password" minlength="10" id="passcommon">
+                            <label class="mdl-textfield__label" for="passcommon">Contraseña</label>
                             <span class="mdl-textfield__error">Algo anda mal</span>
                         </div>
                         <br>
@@ -77,7 +75,7 @@
             </div>
         </div>
         <?php
-            include_once('footer.php');
+        include_once('footer.php');
         ?>
     </div>
 </div>

@@ -13,7 +13,7 @@ $(document).on("submit", "#formRegister", function (event) {
     var $form = $(this);
     var data = $(this).serialize();
     console.log("Serialize: "+data);
-    var url_process = "http://localhost/Optica-ijc/ajax/process_register.php";
+    var url_process = "http://192.168.1.10/Optica-ijc/ajax/process_register.php";
     var data_form = {
         iduser: $("#iduser").val(),
         name: $("#name").val(),
@@ -56,12 +56,13 @@ function openDialog(value, title) {
     dialog.showModal();
     dialog.querySelector('.close').addEventListener('click', function() {
         dialog.close();
+        window.location.href = "index.php";
     });
 }
 
 $(document).on("submit", "#form_appointment", function () {
     event.preventDefault();
-    var url_process = "http://localhost/Optica-ijc/ajax/schedule_appointment.php";
+    var url_process = "http://192.168.1.10/Optica-ijc/ajax/schedule_appointment.php";
     var progress = document.getElementById("progress");
     var error = document.getElementById("error_mssg");
     progress.style.display = 'block';
@@ -123,7 +124,7 @@ function dialogRequest(message) {
 
 $(document).on("submit", "#admin_form", function () {
     event.preventDefault();
-    var url_process = "http://localhost/Optica-ijc/ajax/login_admin.php";
+    var url_process = "http://192.168.1.10/Optica-ijc/ajax/login_admin.php";
     var progress = document.getElementById("progress");
     var error = document.getElementById("error_mssg");
     progress.style.display = 'block';
@@ -164,6 +165,59 @@ $(document).on("submit", "#admin_form", function () {
         });
 });
 
+$(document).on("submit", "#user_form", function () {
+    event.preventDefault();
+    var url_process = "http://192.168.1.10/Optica-ijc/ajax/process_login.php";
+    var progress = document.getElementById("progress");
+    var error = document.getElementById("error_mssg");
+    progress.style.display = 'block';
+    var data_form = {
+        usercommon: $("#usercommon").val(),
+        passcommon: $("#passcommon").val()
+    };
+    console.log(data_form);
+    $.ajax({
+        type: 'POST',
+        url: url_process,
+        data: data_form,
+        dataType: 'json',
+        async: true
+    })
+        .done(function doneResponse(res) {
+            console.log("Response--->");
+            error.style.display = 'none';
+            console.log(res);
+            if (res.exist === undefined){
+                console.log(res);
+                progress.style.display = 'none';
+                window.location.href = res.redirect;
+            } else {
+                progress.style.display = 'none';
+                error.innerText = res.message;
+                error.style.display = 'block';
+            }
+        })
+        .fail(function errorResponse(e) {
+            console.log("Error->");
+            progress.style.display = 'none';
+            console.log(e);
+            error.innerText = "Se ha producido un error";
+            error.style.display = 'block';
+        })
+        .always(function ajaxForm() {
+            console.log("Execute Always");
+        });
+});
+
 function loadAdminPortal(){
 
+}
+
+function adminlogin(){
+    console.log("Redirect...");
+    window.location.href = "loginadmin.php";
+}
+
+function userlogin(){
+    window.location.href = "loginuser.php";
 }

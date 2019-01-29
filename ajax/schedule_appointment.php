@@ -13,21 +13,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $iduser = $_POST['iduser'];
     $dateappmt = $_POST['date'];
     $timeappmt = $_POST['time'];
-    if ($database->getUser($iduser)){
-        $result = $database->requestAppointment($iduser, $dateappmt, $timeappmt);
-        if ($result){
-            $response['message'] = "Se ha realizado el proceso correctamente, la solicitud esta en espera";
-            $response['title'] = "Solicitud realizada";
-            $response['schedule_complete'] = true;
-        }else{
-            $response['message'] = "Ha ocurrido un error inesperado";
+    $today = date("Y-m-d");
+    if ($today > $dateappmt) {
+        $response['message'] = "La fecha ingresada ya paso, por favor registre una fecha actual, o proxima.";
+        $response['title'] = "Solicitud no realizada";
+        $response['schedule_complete'] = false;
+    } else {
+        if ($database->getUser($iduser)) {
+            $result = $database->requestAppointment($iduser, $dateappmt, $timeappmt);
+            if ($result) {
+                $response['message'] = "Se ha realizado el proceso correctamente, la solicitud esta en espera";
+                $response['title'] = "Solicitud realizada";
+                $response['schedule_complete'] = true;
+            } else {
+                $response['message'] = "Ha ocurrido un error inesperado";
+                $response['title'] = "No se puede solicitar";
+                $response['schedule_complete'] = false;
+            }
+        } else {
+            $response['message'] = "El usuario identificado con " . $iduser . " no existe, intente registrando el usuario y realizando nuevamente el proceso";
             $response['title'] = "No se puede solicitar";
             $response['schedule_complete'] = false;
         }
-    } else {
-        $response['message'] = "El usuario identificado con ".$iduser." no existe, intente registrando el usuario y realizando nuevamente el proceso";
-        $response['title'] = "No se puede solicitar";
-        $response['schedule_complete'] = false;
     }
     echo json_encode($response);
 } else {

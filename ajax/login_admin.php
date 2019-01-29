@@ -15,7 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $database->checkUser($username, $pass);
     if ($user){
         $response = $user;
-        $response['redirect'] = "http://localhost/Optica-ijc/admin.php";
+        $response['redirect'] = "http://192.168.1.10/Optica-ijc/admin.php";
+        setcookie('admin', $user);
+        session_start();
+        $_SESSION['adminsession'] = $user;
     } else {
         $response['message'] = 'El usuario no tiene permisos de administrador, o no esta registrado';
         $response['exist'] = false;
