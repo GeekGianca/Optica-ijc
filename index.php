@@ -34,7 +34,6 @@ if ($_COOKIE['user'] != NULL) {
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!--<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">-->
     <link rel="stylesheet" href="mdl/mdl.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="jquery/jquery-3.3.1.js"></script>
@@ -56,7 +55,7 @@ if ($_COOKIE['user'] != NULL) {
     <div class="page-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="page-title mdl-layout-title">
-            <img id="imageHome" class="optic-logo-image" src="images/optica-logo.png">
+            <img id="imageHome" class="optic-logo-image" src="images/optica-logo.png" alt="">
           </span>
             <!-- Add spacer, to align navigation to the right in desktop -->
             <div class="page-header-spacer mdl-layout-spacer"></div>
@@ -291,6 +290,7 @@ if ($_COOKIE['user'] != NULL) {
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
                     <div class="mdl-card__media">
                         <img src="images/more-from-3.png">
@@ -308,6 +308,24 @@ if ($_COOKIE['user'] != NULL) {
                         </a>
                     </div>
                 </div>
+=======
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+              <div class="mdl-card__media">
+                <img src="images/more-from-3.png" alt="">
+              </div>
+              <div class="mdl-card__title">
+                 <h4 class="mdl-card__title-text">Forumla asignada</h4>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <span class="mdl-typography--font-light mdl-typography--subhead">Si tienes una formula medica asignada puedes revisar el estado de ella y saber donde puedes reclamarla y cuando, solo accede en este apartado.</span>
+              </div>
+              <div class="mdl-card__actions">
+                 <a class="optic-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
+                   Buscar
+                   <i class="material-icons">chevron_right</i>
+                 </a>
+              </div>
+>>>>>>> 0243e409f70836c563d51b0221d65c7055d89c18
             </div>
         </div>
         <!--Snackbar For Sucess-->

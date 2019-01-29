@@ -15,10 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $database->checkUser($username, $pass);
     if ($user){
         $response = $user;
+<<<<<<< HEAD
         $response['redirect'] = "http://192.168.1.10/Optica-ijc/admin.php";
         setcookie('admin', $user);
         session_start();
         $_SESSION['adminsession'] = $user;
+=======
+        $response['redirect'] = "https://optica-ijc.herokuapp.com/Optica-ijc/admin.php";
+>>>>>>> 0243e409f70836c563d51b0221d65c7055d89c18
     } else {
         $response['message'] = 'El usuario no tiene permisos de administrador, o no esta registrado';
         $response['exist'] = false;
