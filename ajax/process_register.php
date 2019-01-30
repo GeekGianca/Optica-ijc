@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $birthdate = $_POST['birthdate'];
     $address = $_POST['address'];
     $eps = $_POST['eps'];
-
     //Check if exist user
     if ($database->getUser($iduser)){
         $response['message'] = "El usuario identificado con ".$iduser." ya existe, intente agregando un nuevo usuario";
@@ -27,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $_SESSION['id_user'] = (int)$id_user;
         $response['message'] = "Se registro exitosamente el usuario";
         $response['title'] = "El usuario se ha registrado exitosamente";
-        $response['redirect'] = 'http://192.168.1.10/Optica-ijc/index.php';
+        $response['redirect'] = 'http://192.168.1.7/Optica-ijc/index.php';
         $response['is_login'] = true;
     }
     echo json_encode($response);

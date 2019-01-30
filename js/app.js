@@ -13,12 +13,7 @@ $(document).on("submit", "#formRegister", function (event) {
     var $form = $(this);
     var data = $(this).serialize();
     console.log("Serialize: "+data);
-<<<<<<< HEAD
-    var url_process = "http://192.168.1.10/Optica-ijc/ajax/process_register.php";
-=======
-    //http://localhost/Optica-ijc/ajax/process_register.php
-    var url_process = "localhost/Optica-ijc/ajax/process_register.php";
->>>>>>> 0243e409f70836c563d51b0221d65c7055d89c18
+    var url_process = "http://192.168.1.7/Optica-ijc/ajax/process_register.php";
     var data_form = {
         iduser: $("#iduser").val(),
         name: $("#name").val(),
@@ -67,12 +62,7 @@ function openDialog(value, title) {
 
 $(document).on("submit", "#form_appointment", function () {
     event.preventDefault();
-<<<<<<< HEAD
-    var url_process = "http://192.168.1.10/Optica-ijc/ajax/schedule_appointment.php";
-=======
-    //http://localhost/Optica-ijc/ajax/schedule_appointment.php
-    var url_process = "localhost/Optica-ijc/ajax/schedule_appointment.php";
->>>>>>> 0243e409f70836c563d51b0221d65c7055d89c18
+    var url_process = "http://192.168.1.7/Optica-ijc/ajax/schedule_appointment.php";
     var progress = document.getElementById("progress");
     var error = document.getElementById("error_mssg");
     progress.style.display = 'block';
@@ -134,12 +124,7 @@ function dialogRequest(message) {
 
 $(document).on("submit", "#admin_form", function () {
     event.preventDefault();
-<<<<<<< HEAD
-    var url_process = "http://192.168.1.10/Optica-ijc/ajax/login_admin.php";
-=======
-    //http://localhost/Optica-ijc/ajax/login_admin.php
-    var url_process = "localhost/Optica-ijc/ajax/login_admin.php";
->>>>>>> 0243e409f70836c563d51b0221d65c7055d89c18
+    var url_process = "http://192.168.1.7/Optica-ijc/ajax/login_admin.php";
     var progress = document.getElementById("progress");
     var error = document.getElementById("error_mssg");
     progress.style.display = 'block';
@@ -182,7 +167,7 @@ $(document).on("submit", "#admin_form", function () {
 
 $(document).on("submit", "#user_form", function () {
     event.preventDefault();
-    var url_process = "http://192.168.1.10/Optica-ijc/ajax/process_login.php";
+    var url_process = "http://192.168.1.7/Optica-ijc/ajax/process_login.php";
     var progress = document.getElementById("progress");
     var error = document.getElementById("error_mssg");
     progress.style.display = 'block';
@@ -224,10 +209,6 @@ $(document).on("submit", "#user_form", function () {
         });
 });
 
-function loadAdminPortal(){
-
-}
-
 function adminlogin(){
     console.log("Redirect...");
     window.location.href = "loginadmin.php";
@@ -235,4 +216,8 @@ function adminlogin(){
 
 function userlogin(){
     window.location.href = "loginuser.php";
+}
+
+function logout(){
+    window.location.href = "http://192.168.1.7/Optica-ijc/php/logout.php";
 }

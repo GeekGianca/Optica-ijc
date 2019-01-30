@@ -1,11 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Null
- * Date: 10/31/2018
- * Time: 10:35 AM
- */
+
 class UserSession{
+
     public function __construct()
     {
         session_start();

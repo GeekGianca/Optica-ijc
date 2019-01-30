@@ -16,12 +16,13 @@
   limitations under the License
 -->
 <?php
+require_once 'php/UserSession.php';
 $user = null;
 $isLogin = false;
-if ($_COOKIE['user'] != NULL) {
-    $usersession = new UserSession();
+$usrsess = new UserSession();
+if (isset($_SESSION['userSession'])) {
     $isLogin = true;
-    $user = $usersession->getCurrentUser();
+    $user = $usrsess->getCurrentUser();
 }
 ?>
 <html lang="en">
@@ -59,16 +60,6 @@ if ($_COOKIE['user'] != NULL) {
           </span>
             <!-- Add spacer, to align navigation to the right in desktop -->
             <div class="page-header-spacer mdl-layout-spacer"></div>
-            <?php
-            if ($isLogin) {
-                ?>
-                <span class="mdl-chip mdl-chip--contact">
-                    <span class="mdl-chip__contact mdl-color--amber mdl-color-text--white"><?php $user.name[0] ?></span>
-                    <span class="mdl-chip__text"><?php $user.name ?></span>
-                </span>
-                <?php
-            }
-            ?>
             <!-- Navigation -->
             <div class="page-navigation-container">
                 <nav class="page-navigation mdl-navigation">
@@ -78,96 +69,125 @@ if ($_COOKIE['user'] != NULL) {
                     <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Procedimientos</a>
                     <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Recetario</a>
                     <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Garantias</a>
+                <?php
+                    if ($isLogin) {
+                        echo '
+                        <span class="mdl-chip mdl-chip--contact">
+                            <span class="mdl-chip__contact mdl-color--amber mdl-color-text--white">'.$user['name'][0].'</span>
+                            <span class="mdl-chip__text">'.$user['name'].' </span>
+                        </span>';
+                    }
+                ?>
                 </nav>
             </div>
             <span class="page-mobile-title mdl-layout-title">
-            <img class="optic-logo-image" src="images/optica-logo.png">
-          </span>
+                <img class="optic-logo-image" src="images/optica-logo.png" alt="">
+            </span>
             <button class="page-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect"
                     id="more-button">
                 <i class="material-icons">more_vert</i>
             </button>
             <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
-                <li onclick="adminlogin()" class="mdl-menu__item">
-                    Acceso Administrativo
-                </li>
-                <li onclick="userlogin()" class="mdl-menu__item">
-                    Acceso Usuarios
-                </li>
+                <?php
+                    if ($isLogin){
+                 ?>
+                        <li onclick="logout()" class="mdl-menu__item">
+                            Cerrar sesion
+                        </li>
+                 <?php
+                    } else {
+                 ?>
+                        <li onclick="adminlogin()" class="mdl-menu__item">
+                            Acceso Administrativo
+                        </li>
+                        <li onclick="userlogin()" class="mdl-menu__item">
+                            Acceso Usuarios
+                        </li>
+                <?php
+                    }
+                ?>
             </ul>
         </div>
     </div>
-
-    <div class="page-drawer mdl-layout__drawer">
+    <?php
+        if($isLogin) {
+            ?>
+                <div class="page-drawer mdl-layout__drawer">
         <span class="mdl-layout-title">
           <img class="optic-logo-image" src="images/optica-logo-white.png">
         </span>
-        <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="">
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="">
             <span>
               <img class="icon-logo-nav" src="images/hclinicasv.png">
               Historias Clinicas
             </span>
-            </a>
-            <a class="mdl-navigation__link" href="">
+                    </a>
+                    <a class="mdl-navigation__link" href="">
             <span>
               <img class="icon-logo-nav" src="images/hevoluciones.png">
               Hoja de evoluciones
             </span>
-            </a>
-            <a class="mdl-navigation__link" href="">
+                    </a>
+                    <a class="mdl-navigation__link" href="">
             <span>
               <img class="icon-logo-nav" src="images/citasv.png">
               Citas
             </span>
-            </a>
-            <a class="mdl-navigation__link" href="">
+                    </a>
+                    <a class="mdl-navigation__link" href="">
             <span>
               <img class="icon-logo-nav" src="images/fcompra.png">
               Facturas de compra
             </span>
-            </a>
-            <a class="mdl-navigation__link" href="">
+                    </a>
+                    <a class="mdl-navigation__link" href="">
             <span>
               <img class="icon-logo-nav" src="images/formulas.png">
               Formulas
             </span>
-            </a>
-            <a class="mdl-navigation__link" href="">
+                    </a>
+                    <a class="mdl-navigation__link" href="">
             <span>
               <img class="icon-logo-nav" src="images/citas.png">
               Pedidos cliente
             </span>
-            </a>
-            <div class="page-drawer-separator"></div>
-            <span class="mdl-navigation__link" href="">Administrativo</span>
-            <a class="mdl-navigation__link" href="">Pago nomina</a>
-            <a class="mdl-navigation__link" href="">Control de producto</a>
-            <a class="mdl-navigation__link" href="">Pedido labroatorio</a>
-            <a class="mdl-navigation__link" href="">Consentimiento informado</a>
-            <div class="page-drawer-separator"></div>
-            <span class="mdl-navigation__link" href="#">Clientes</span>
-            <a class="mdl-navigation__link" href="">Formula lentes</a>
-            <a class="mdl-navigation__link" href="">Examenes externos</a>
-            <a class="mdl-navigation__link" href="">Diagnosticos</a>
-            <div class="page-drawer-separator"></div>
-            <span class="mdl-navigation__link" href="">Otros</span>
-            <a class="mdl-navigation__link" href="">Procedimientos</a>
-            <a class="mdl-navigation__link" href="">Recetario de examenes</a>
-            <a class="mdl-navigation__link" href="register.php">Registro de usuario</a>
-        </nav>
-    </div>
+                    </a>
+                    <div class="page-drawer-separator"></div>
+                    <span class="mdl-navigation__link" href="">Administrativo</span>
+                    <a class="mdl-navigation__link" href="">Pago nomina</a>
+                    <a class="mdl-navigation__link" href="">Control de producto</a>
+                    <a class="mdl-navigation__link" href="">Pedido labroatorio</a>
+                    <a class="mdl-navigation__link" href="">Consentimiento informado</a>
+                    <div class="page-drawer-separator"></div>
+                    <span class="mdl-navigation__link" href="#">Clientes</span>
+                    <a class="mdl-navigation__link" href="">Formula lentes</a>
+                    <a class="mdl-navigation__link" href="">Examenes externos</a>
+                    <a class="mdl-navigation__link" href="">Diagnosticos</a>
+                    <div class="page-drawer-separator"></div>
+                    <span class="mdl-navigation__link" href="">Otros</span>
+                    <a class="mdl-navigation__link" href="">Procedimientos</a>
+                    <a class="mdl-navigation__link" href="">Recetario de examenes</a>
+                    <a class="mdl-navigation__link" href="register.php">Registro de usuario</a>
+                </nav>
+            </div>
+            <?php
+        }
+    ?>
     <div class="android-content mdl-layout__content">
         <a name="top"></a>
         <div class="optic-be-together-section mdl-typography--text-center">
             <div class="logo-font optic-slogan">Has de tu vida con mas claridad</div><!--Here info in the banner-->
             <div class="logo-font optic-sub-slogan">Agenda tu cita y ten el gusto de mejorar tu calidad de vidad visual,
                 garantia de por vida
-            </div><!--Here info in the banner-->
-            <div class="logo-font optic-create-character">
-                <a href=""><img src="images/icons8_Enter_24px.png">Registrate</a>
             </div>
-
+            <?php
+                if (!$isLogin){
+                    echo '<div class="logo-font optic-create-character">
+                            <a href="register.php"><img src="images/icons8_Enter_24px.png" alt="">Registrate</a>
+                          </div>';
+                }
+            ?>
             <a href="#screens">
                 <button class="page-fab mdl-button mdl-button--colored mdl-js-button mdl-button--fab mdl-js-ripple-effect">
                     <i class="material-icons">expand_more</i>
@@ -289,8 +309,6 @@ if ($_COOKIE['user'] != NULL) {
                         </a>
                     </div>
                 </div>
-
-<<<<<<< HEAD
                 <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
                     <div class="mdl-card__media">
                         <img src="images/more-from-3.png">
@@ -308,24 +326,7 @@ if ($_COOKIE['user'] != NULL) {
                         </a>
                     </div>
                 </div>
-=======
-            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-              <div class="mdl-card__media">
-                <img src="images/more-from-3.png" alt="">
-              </div>
-              <div class="mdl-card__title">
-                 <h4 class="mdl-card__title-text">Forumla asignada</h4>
-              </div>
-              <div class="mdl-card__supporting-text">
-                <span class="mdl-typography--font-light mdl-typography--subhead">Si tienes una formula medica asignada puedes revisar el estado de ella y saber donde puedes reclamarla y cuando, solo accede en este apartado.</span>
-              </div>
-              <div class="mdl-card__actions">
-                 <a class="optic-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-                   Buscar
-                   <i class="material-icons">chevron_right</i>
-                 </a>
-              </div>
->>>>>>> 0243e409f70836c563d51b0221d65c7055d89c18
+
             </div>
         </div>
         <!--Snackbar For Sucess-->

@@ -116,12 +116,12 @@
         }
 
         public function loginuser($iduser, $pass){
-            $statement = $this->conn->prepare("SELECT users.name, acces_user.users_idusers FROM users INNER JOIN acces_user on users.idusers = acces_user.users_idusers WHERE acces_user.users_idusers = ? AND acces_user.password_user = ?;");
+            $statement = $this->conn->prepare("SELECT users.name, acces_user.users_idusers FROM users INNER JOIN acces_user on users.idusers = acces_user.users_idusers WHERE acces_user.users_idusers = ? AND acces_user.password_user = ? AND users.type_user = 3;");
             $statement->bind_param("ss", $iduser, $pass);
             $statement->execute();
             $getuser = $statement->get_result()->fetch_assoc();
             $statement->close();
-            if ($getuser) {
+            if ($getuser != null) {
                 return $getuser;
             } else {
                 return false;
