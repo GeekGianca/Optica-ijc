@@ -7,7 +7,7 @@
 
 include_once 'db.php';
 $conn = Db::getConnection();*/
-define("DB_HOST", "192.168.1.7");
+define("DB_HOST", "192.168.1.8");
 define("DB_USER", "root");
 define("DB_PASSWORD", "admin");
 define("DB_DATABASE", "opticadatabase");

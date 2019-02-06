@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $database->checkUser($username, $pass);
     if ($user){
         $response = $user;
-        $response['redirect'] = "http://192.168.1.7/Optica-ijc/admin.php";
+        $response['redirect'] = "http://192.168.1.8/Optica-ijc/admin.php";
         setcookie('admin', $user);
         session_start();
         $_SESSION['adminsession'] = $user;

@@ -377,7 +377,7 @@ a img{
   }
 
 .page-customized-section-image {
-  background: url('images/devices.jpg') center top no-repeat;
+  background: url('images/0018341395.jpg') center top no-repeat;
   background-size: cover;
   height: 400px;
 }
@@ -542,5 +542,15 @@ a img{
 
   .page-footer .mdl-mega-footer--bottom-section {
     display: none;
+  }
+
+  .demo-card-square.mdl-card {
+    width: 320px;
+    height: 320px;
+  }
+
+  .demo-card-square > mdl-card__title {
+    color: #fff;
+    background: url('images/fmedica.jpg');
   }
 }

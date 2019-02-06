@@ -13,7 +13,7 @@ $(document).on("submit", "#formRegister", function (event) {
     var $form = $(this);
     var data = $(this).serialize();
     console.log("Serialize: "+data);
-    var url_process = "http://192.168.1.7/Optica-ijc/ajax/process_register.php";
+    var url_process = "http://192.168.1.8/Optica-ijc/ajax/process_register.php";
     var data_form = {
         iduser: $("#iduser").val(),
         name: $("#name").val(),
@@ -62,7 +62,7 @@ function openDialog(value, title) {
 
 $(document).on("submit", "#form_appointment", function () {
     event.preventDefault();
-    var url_process = "http://192.168.1.7/Optica-ijc/ajax/schedule_appointment.php";
+    var url_process = "http://192.168.1.8/Optica-ijc/ajax/schedule_appointment.php";
     var progress = document.getElementById("progress");
     var error = document.getElementById("error_mssg");
     progress.style.display = 'block';
@@ -124,7 +124,7 @@ function dialogRequest(message) {
 
 $(document).on("submit", "#admin_form", function () {
     event.preventDefault();
-    var url_process = "http://192.168.1.7/Optica-ijc/ajax/login_admin.php";
+    var url_process = "http://192.168.1.8/Optica-ijc/ajax/login_admin.php";
     var progress = document.getElementById("progress");
     var error = document.getElementById("error_mssg");
     progress.style.display = 'block';
@@ -167,7 +167,7 @@ $(document).on("submit", "#admin_form", function () {
 
 $(document).on("submit", "#user_form", function () {
     event.preventDefault();
-    var url_process = "http://192.168.1.7/Optica-ijc/ajax/process_login.php";
+    var url_process = "http://192.168.1.8/Optica-ijc/ajax/process_login.php";
     var progress = document.getElementById("progress");
     var error = document.getElementById("error_mssg");
     progress.style.display = 'block';
@@ -210,7 +210,6 @@ $(document).on("submit", "#user_form", function () {
 });
 
 function adminlogin(){
-    console.log("Redirect...");
     window.location.href = "loginadmin.php";
 }
 
@@ -219,5 +218,12 @@ function userlogin(){
 }
 
 function logout(){
-    window.location.href = "http://192.168.1.7/Optica-ijc/php/logout.php";
+    window.location.href = "http://192.168.1.8/Optica-ijc/php/logout.php";
+}
+function obtenerdatosformulas(paciente) {
+    if (paciente !== undefined){
+        $ajax({
+           url: 'php/'
+        });
+    }
 }

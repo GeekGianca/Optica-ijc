@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="mdl/mdl.min.css">
     <link rel="stylesheet" href="styles.css">
-    <!--<link rel="stylesheet" href="mdl/material.min.css">-->
     <script src="jquery/jquery-3.3.1.js"></script>
     <script src="mdl/material.min.js"></script>
 </head>
@@ -41,8 +40,6 @@
     <div class="android-content mdl-layout__content">
         <a name="top"></a>
         <div class="mdl-typography--text-center">
-            <!--Login Form-->
-            <!-- Simple Textfield -->
             <div class="mdl-card mdl-shadow--2dp" style="margin-left: 550px; margin-top: 80px; margin-bottom: 100px;">
                 <div class="mdl-card__title mdl-card--expand">
                     <h2 class="mdl-card__title-text"><strong>Inicio Usuario</strong></h2>
