@@ -33,6 +33,19 @@
     <!--<link rel="stylesheet" href="mdl/material.min.css">-->
     <script src="jquery/jquery-3.3.1.js"></script>
     <script src="mdl/material.min.js"></script>
+    <style>
+        .demo-card-wide.mdl-card{
+            width: 512px;
+        }
+        .demo-card-wide > .mdl-card__title {
+            color: #000;
+            height: 176px;
+            background: url("images/inicioadmin.png") center / cover;
+        }
+        .demo-card-wide > .mdl-card__menu {
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -44,9 +57,9 @@
         <div class="mdl-typography--text-center">
             <!--Login Form-->
             <!-- Simple Textfield -->
-            <div class="mdl-card mdl-shadow--2dp" style="margin-left: 550px; margin-top: 80px; margin-bottom: 100px;">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width: 500px; margin: 14px auto 5px;">
                 <div class="mdl-card__title mdl-card--expand">
-                    <h2 class="mdl-card__title-text"><strong>Inicio Administrador</strong></h2>
+                    <h2 class="mdl-card__title-text"><strong></strong></h2>
                 </div>
                 <div class="mdl-card__supporting-text">
                     <form action="POST" id="admin_form">
@@ -67,6 +80,11 @@
                         <div class="mdl-card__actions mdl-card--border">
                             <button id="login" type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect">
                                 Iniciar Sesion
+                            </button>
+                        </div>
+                        <div class="mdl-card__menu">
+                            <button type="reset" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                <i class="material-icons">close</i>
                             </button>
                         </div>
                     </form>

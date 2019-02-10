@@ -1,6 +1,6 @@
 $(function () {
     $.ajaxSetup({
-        headers: { 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content') }
+        headers: {'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')}
     });
 });
 
@@ -12,8 +12,8 @@ $(document).on("submit", "#formRegister", function (event) {
     event.preventDefault();
     var $form = $(this);
     var data = $(this).serialize();
-    console.log("Serialize: "+data);
-    var url_process = "http://192.168.1.8/Optica-ijc/ajax/process_register.php";
+    console.log("Serialize: " + data);
+    var url_process = "http://192.168.1.7/Optica-ijc/ajax/process_register.php";
     var data_form = {
         iduser: $("#iduser").val(),
         name: $("#name").val(),
@@ -50,11 +50,11 @@ function openDialog(value, title) {
     var dialog = document.querySelector('dialog');
     document.getElementById("message").innerHTML = value;
     document.getElementById("title_message").innerText = title;
-    if (! dialog.showModal) {
+    if (!dialog.showModal) {
         dialogPolyfill.registerDialog(dialog);
     }
     dialog.showModal();
-    dialog.querySelector('.close').addEventListener('click', function() {
+    dialog.querySelector('.close').addEventListener('click', function () {
         dialog.close();
         window.location.href = "index.php";
     });
@@ -62,7 +62,7 @@ function openDialog(value, title) {
 
 $(document).on("submit", "#form_appointment", function () {
     event.preventDefault();
-    var url_process = "http://192.168.1.8/Optica-ijc/ajax/schedule_appointment.php";
+    var url_process = "http://192.168.1.7/Optica-ijc/ajax/schedule_appointment.php";
     var progress = document.getElementById("progress");
     var error = document.getElementById("error_mssg");
     progress.style.display = 'block';
@@ -84,7 +84,7 @@ $(document).on("submit", "#form_appointment", function () {
             console.log(res);
             error.style.display = 'none';
             console.log(res.schedule_complete);
-            if (res.schedule_complete){
+            if (res.schedule_complete) {
                 schedule();
                 dialogRequest(res.message);
             } else {
@@ -102,6 +102,7 @@ $(document).on("submit", "#form_appointment", function () {
         })
         .always(function ajaxForm() {
             console.log("Ejecuta");
+            progress.style.display = 'none';
             //schedule();
         });
 });
@@ -124,7 +125,7 @@ function dialogRequest(message) {
 
 $(document).on("submit", "#admin_form", function () {
     event.preventDefault();
-    var url_process = "http://192.168.1.8/Optica-ijc/ajax/login_admin.php";
+    var url_process = "http://192.168.1.7/Optica-ijc/ajax/login_admin.php";
     var progress = document.getElementById("progress");
     var error = document.getElementById("error_mssg");
     progress.style.display = 'block';
@@ -143,7 +144,7 @@ $(document).on("submit", "#admin_form", function () {
         .done(function doneResponse(res) {
             console.log("Response--->");
             error.style.display = 'none';
-            if (res.exist === undefined){
+            if (res.exist === undefined) {
                 console.log(res);
                 progress.style.display = 'none';
                 window.location.href = res.redirect;
@@ -167,7 +168,7 @@ $(document).on("submit", "#admin_form", function () {
 
 $(document).on("submit", "#user_form", function () {
     event.preventDefault();
-    var url_process = "http://192.168.1.8/Optica-ijc/ajax/process_login.php";
+    var url_process = "http://192.168.1.7/Optica-ijc/ajax/process_login.php";
     var progress = document.getElementById("progress");
     var error = document.getElementById("error_mssg");
     progress.style.display = 'block';
@@ -187,7 +188,7 @@ $(document).on("submit", "#user_form", function () {
             console.log("Response--->");
             error.style.display = 'none';
             console.log(res);
-            if (res.exist === undefined){
+            if (res.exist === undefined) {
                 console.log(res);
                 progress.style.display = 'none';
                 window.location.href = res.redirect;
@@ -209,21 +210,82 @@ $(document).on("submit", "#user_form", function () {
         });
 });
 
-function adminlogin(){
+function adminlogin() {
     window.location.href = "loginadmin.php";
 }
 
-function userlogin(){
+function userlogin() {
     window.location.href = "loginuser.php";
 }
 
-function logout(){
-    window.location.href = "http://192.168.1.8/Optica-ijc/php/logout.php";
+function logout() {
+    window.location.href = "http://192.168.1.7/Optica-ijc/php/logout.php";
 }
+
 function obtenerdatosformulas(paciente) {
-    if (paciente !== undefined){
+    if (paciente !== undefined) {
         $ajax({
-           url: 'php/'
+            url: 'php/'
         });
+        console.log(paciente);
     }
+}
+
+function obtenercitas(cedula) {
+    if (cedula !== undefined) {
+        $.ajax({
+            url: 'http://192.168.1.7/Optica-ijc/ajax/listarcitas.php',
+            type: 'POST',
+            data: {cedula},
+            success: function (response) {
+                console.log(response);
+                let datos = JSON.parse(response);
+                let template = '';
+                datos.forEach(dato => {
+                    console.log(dato);
+                    let estado = dato.status == 1 ? 'En Espera' : 'Aceptada';
+                    let prueb = dato.status == 3 ? 'Rechazada' : estado;
+                    let finstate = dato.status == 2 ? 'Cancelada' : prueb;
+                    template += `
+                    <tr codigocita="${dato.idquotes}">
+                        <td>${dato.idquotes}</td>
+                        <td>${dato.users_idusers}</td>
+                        <td class="mdl-data-table__cell--non-numeric">${dato.date_quotes}</td>
+                        <td class="mdl-data-table__cell--non-numeric">${dato.time_quotes}</td>
+                        <td>${finstate}</td>
+                        <td>
+                            <button class="cita-elimina mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                                CANCELAR
+                            </button>
+                        </td>
+                    </tr>`;
+                });
+                $('#bodytable').html(template);
+            }
+        });
+    } else {
+        window.location.href = "index.php";
+    }
+}
+
+$(document).on('click', '.cita-elimina', function () {
+    let element = $(this)[0].parentElement.parentElement;
+    let codigo = $(element).attr('codigocita');
+    $.post('http://192.168.1.7/Optica-ijc/ajax/cancelacita.php', {codigo}, function (response) {
+        const datoid = JSON.parse(response);
+        obtenercitas(datoid.users_idusers);
+    });
+});
+
+function hcdisponible(cedula) {
+    console.log(cedula);
+    $.ajax({
+        url: 'http://192.168.1.7/Optica-ijc/ajax/getclinicalhistories.php',
+        type: 'POST',
+        data: {cedula},
+        success: function (response) {
+            let datos = JSON.parse(response);
+            console.log(datos);
+        }
+    });
 }

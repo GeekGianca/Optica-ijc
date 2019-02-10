@@ -32,6 +32,19 @@
     <link rel="stylesheet" href="styles.css">
     <script src="jquery/jquery-3.3.1.js"></script>
     <script src="mdl/material.min.js"></script>
+    <style>
+        .demo-card-wide.mdl-card{
+            width: 550px;
+        }
+        .demo-card-wide > .mdl-card__title {
+            color: #fff;
+            height: 176px;
+            background: url("images/register.jpg") center / cover;
+        }
+        .demo-card-wide > .mdl-card__menu {
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -43,7 +56,7 @@
         <div class="mdl-typography--text-center">
             <!--Login Form-->
             <!-- Simple Textfield -->
-            <div class="mdl-card mdl-shadow--2dp" style="margin-left: 550px; margin-top: 15px;">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width: 500px; margin: 14px auto 5px;">
                 <div class="mdl-card__title mdl-card--expand">
                     <h2 class="mdl-card__title-text mdl-typography--text-center">
                         <strong>Registro de usuarios</strong>
@@ -92,6 +105,11 @@
                             </button>
                             <button type="reset" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="background-color: #d50000;">
                                 Limpiar
+                            </button>
+                        </div>
+                        <div class="mdl-card__menu">
+                            <button type="reset" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                <i class="material-icons">close</i>
                             </button>
                         </div>
                     </form>

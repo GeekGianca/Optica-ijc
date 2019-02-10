@@ -183,6 +183,11 @@ a img{
   background-size: cover;
 }
 
+.optic-be-together-section-none {
+  align-items: center;
+  justify-content: center;
+}
+
 .logo-font {
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   line-height: 1;

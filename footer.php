@@ -1,8 +1,15 @@
 <footer class="page-footer mdl-mega-footer">
-    <div class="mdl-mega-footer--middle-section">
-        <p class="mdl-typography--font-light">Ingenieria de Software: © 2018, Universidad de Cordoba</p>
+    <div class="mdl-mega-footer--top-section" style="height: 30px;">
+        <div class="mdl-mega-footer--right-section">
+            <a class="mdl-typography--font-light" href="#top">
+                Volver arriba
+                <i class="material-icons">expand_less</i>
+            </a>
+        </div>
     </div>
-
+    <div class="mdl-mega-footer--middle-section">
+        <p class="mdl-typography--font-light mdl-typography--text-center">Ingenieria de Software: © 2018, Universidad de Cordoba</p>
+    </div>
     <div class="mdl-mega-footer--bottom-section">
         <a class="optic-link page-link-menu mdl-typography--font-light" id="version-dropdown">
             Usuarios
@@ -12,7 +19,6 @@
             <li class="mdl-menu__item">Notificarme</li>
             <li class="mdl-menu__item">Cancelar cita</li>
             <li class="mdl-menu__item">Retiro de productos</li>
-            <li class="mdl-menu__item">Mis diagnosticos</li>
         </ul>
         <a class="optic-link page-link-menu mdl-typography--font-light" id="developers-dropdown">
             Otras opciones
