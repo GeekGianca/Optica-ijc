@@ -278,14 +278,35 @@ $(document).on('click', '.cita-elimina', function () {
 });
 
 function hcdisponible(cedula) {
-    console.log(cedula);
-    $.ajax({
-        url: 'http://192.168.1.7/Optica-ijc/ajax/getclinicalhistories.php',
-        type: 'POST',
-        data: {cedula},
-        success: function (response) {
-            let datos = JSON.parse(response);
-            console.log(datos);
-        }
-    });
+    if (cedula !== undefined) {
+        console.log(cedula);
+        $.ajax({
+            url: 'http://192.168.1.7/Optica-ijc/ajax/getclinicalhistories.php',
+            type: 'POST',
+            data: {cedula},
+            success: function (response) {
+                let datos = JSON.parse(response);
+                let template = '';
+                datos.forEach(dato => {
+                   template +=  `
+                   <li class="mdl-list__item mdl-list__item--three-line">
+                        <span class="mdl-list__item-primary-content">
+                          <i class="material-icons mdl-list__item-avatar">person</i>
+                          <span>${dato.idclinical_histories}</span>
+                          <span class="mdl-list__item-text-body">
+                            ${dato.current_illness}
+                          </span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                          <a class="mdl-list__item-secondary-action" href=""><i class="material-icons">star</i></a>
+                        </span>
+                    </li>
+                   `;
+                });
+                $('#listahistoriales').html(template);
+            }
+        });
+    } else {
+        window.location.href = "index.php";
+    }
 }

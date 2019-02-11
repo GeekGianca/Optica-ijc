@@ -1,5 +1,7 @@
 <?php
 require_once '../php/functions.php';
+require_once '../php/adminsession.php';
+$admin = new AdminSession();
 $database = new Functions();
 /**
  * Created by PhpStorm.
@@ -16,9 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($user){
         $response = $user;
         $response['redirect'] = "http://192.168.1.7/Optica-ijc/admin.php";
-        setcookie('admin', $user);
-        session_start();
-        $_SESSION['adminsession'] = $user;
+        $admin->setCurrentUser($user);
     } else {
         $response['message'] = 'El usuario no tiene permisos de administrador, o no esta registrado';
         $response['exist'] = false;

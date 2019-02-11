@@ -201,7 +201,7 @@ if (isset($_SESSION['userSession'])) {
     </div>
 </div>
 <a id="view-source"
-   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color-text--yellow mdl-color-text--accent">Agendar
+   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">Agendar
     Cita</a>
 <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <script src="js/app.js"></script>

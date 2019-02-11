@@ -53,10 +53,13 @@ if (isset($_SESSION['userSession'])) {
                             <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
                                 <div class="mdl-card__supporting-text">
                                     <h4>Disponibilidad de formula</h4>
-                                    Si ya solicitaste tu formula, entonces puedes proceder a descargarla, debes tener la sesion iniciada para poder acceder a la descarga, y automaticamente si tiene disponibilidad se descargara.
+                                    Si ya solicitaste tu formula, entonces puedes proceder a descargarla, debes tener la
+                                    sesion iniciada para poder acceder a la descarga, y automaticamente si tiene
+                                    disponibilidad se descargara.
                                 </div>
                                 <div class="mdl-card__actions">
-                                    <a href="<?php echo $user != null ? "#" : "loginuser.php" ?>" class="mdl-button"><?php echo $user != null ? "Descargar" : "Inicie Sesion" ?></a>
+                                    <a href="<?php echo $user != null ? "#" : "loginuser.php" ?>"
+                                       class="mdl-button"><?php echo $user != null ? "Descargar" : "Inicie Sesion" ?></a>
                                 </div>
                             </div>
                             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
@@ -69,7 +72,7 @@ if (isset($_SESSION['userSession'])) {
                             </ul>
                         </section>
                         <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-                            <div class="mdl-card mdl-cell mdl-cell--12-col">
+                            <div class="mdl-card mdl-cell mdl-cell--12-col" id="formulasasignadas">
                                 <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing" id="formulas">
                                     <h4 class="mdl-cell mdl-cell--12-col">Detalles de formulas</h4>
                                     <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
@@ -77,20 +80,15 @@ if (isset($_SESSION['userSession'])) {
                                     </div>
                                     <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
                                         <h5>Titulo</h5>
-                                        Detalle o descripcion <a href="#"><?php echo $user != null ? "Descargar" : "Inicie Sesion" ?></a>.
+                                        Detalle o descripcion <a
+                                                href="#"><?php echo $user != null ? "Descargar" : "Inicie Sesion" ?></a>.
                                     </div>
                                 </div>
                                 <div class="mdl-card__actions">
-                                    <a href="#" class="mdl-button"><?php echo $user != null ? "Ver Diagnosticos" : "Inicie Sesion" ?></a>
+                                    <a href="#"
+                                       class="mdl-button"><?php echo $user != null ? "Ver Diagnosticos" : "Inicie Sesion" ?></a>
                                 </div>
                             </div>
-                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2">
-                                <i class="material-icons">more_vert</i>
-                            </button>
-                            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn2">
-                                <li class="mdl-menu__item" disabled>Descargar todo</li>
-                                <li class="mdl-menu__item" disabled>Ver todo</li>
-                            </ul>
                         </section>
                     </div>
                     <div class="mdl-layout__tab-panel" id="features">
@@ -107,7 +105,8 @@ if (isset($_SESSION['userSession'])) {
 
                                 <h5 id="disp1">Medicos disponibles</h5>
                                 Los medicos disponibles no son del todo seguros, a ellos les quedara la notificacion
-                                para realizar el seguimiento de la formula y en dado caso que se solicite se le notificara.
+                                para realizar el seguimiento de la formula y en dado caso que se solicite se le
+                                notificara.
                                 Tener en cuenta que se necesita a la mano.
                                 <ul>
                                     <li>Historial clinico.</li>

@@ -176,4 +176,16 @@ class Functions
         }
         return $result;
     }
+
+    public function getquotesquantity(){
+        $statement = $this->conn->prepare("SELECT COUNT(*) as total FROM quotes;");
+        $statement->execute();
+        $countquo = $statement->get_result()->fetch_assoc();
+        $statement->close();
+        if ($countquo) {
+            return $countquo;
+        } else {
+            return false;
+        }
+    }
 }
