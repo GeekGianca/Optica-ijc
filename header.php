@@ -9,10 +9,9 @@
         <div class="page-navigation-container">
             <nav class="page-navigation mdl-navigation">
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" href="formulas.php">Formulas</a>
-                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#">Examenes</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="examenes.php">Examenes</a>
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#">Diagnosticos</a>
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#">Procedimientos</a>
-                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#">Recetario</a>
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#">Garantias</a>
                 <?php
                 if ($isLogin) {

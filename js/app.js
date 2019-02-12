@@ -1,3 +1,5 @@
+let urlcommon = 'http://192.168.1.10';
+let userval;
 $(function () {
     $.ajaxSetup({
         headers: {'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')}
@@ -13,7 +15,7 @@ $(document).on("submit", "#formRegister", function (event) {
     var $form = $(this);
     var data = $(this).serialize();
     console.log("Serialize: " + data);
-    var url_process = "http://192.168.1.7/Optica-ijc/ajax/process_register.php";
+    var url_process = urlcommon+"/Optica-ijc/ajax/process_register.php";
     var data_form = {
         iduser: $("#iduser").val(),
         name: $("#name").val(),
@@ -62,7 +64,7 @@ function openDialog(value, title) {
 
 $(document).on("submit", "#form_appointment", function () {
     event.preventDefault();
-    var url_process = "http://192.168.1.7/Optica-ijc/ajax/schedule_appointment.php";
+    var url_process = urlcommon+"/Optica-ijc/ajax/schedule_appointment.php";
     var progress = document.getElementById("progress");
     var error = document.getElementById("error_mssg");
     progress.style.display = 'block';
@@ -125,7 +127,7 @@ function dialogRequest(message) {
 
 $(document).on("submit", "#admin_form", function () {
     event.preventDefault();
-    var url_process = "http://192.168.1.7/Optica-ijc/ajax/login_admin.php";
+    var url_process = urlcommon+"/Optica-ijc/ajax/login_admin.php";
     var progress = document.getElementById("progress");
     var error = document.getElementById("error_mssg");
     progress.style.display = 'block';
@@ -168,7 +170,7 @@ $(document).on("submit", "#admin_form", function () {
 
 $(document).on("submit", "#user_form", function () {
     event.preventDefault();
-    var url_process = "http://192.168.1.7/Optica-ijc/ajax/process_login.php";
+    var url_process = urlcommon+"/Optica-ijc/ajax/process_login.php";
     var progress = document.getElementById("progress");
     var error = document.getElementById("error_mssg");
     progress.style.display = 'block';
@@ -219,22 +221,21 @@ function userlogin() {
 }
 
 function logout() {
-    window.location.href = "http://192.168.1.7/Optica-ijc/php/logout.php";
+    window.location.href = urlcommon+"/Optica-ijc/php/logout.php";
 }
 
 function obtenerdatosformulas(paciente) {
     if (paciente !== undefined) {
-        $ajax({
-            url: 'php/'
-        });
+        userval = paciente;
         console.log(paciente);
     }
 }
 
 function obtenercitas(cedula) {
     if (cedula !== undefined) {
+        userval = cedula;
         $.ajax({
-            url: 'http://192.168.1.7/Optica-ijc/ajax/listarcitas.php',
+            url: urlcommon+'/Optica-ijc/ajax/listarcitas.php',
             type: 'POST',
             data: {cedula},
             success: function (response) {
@@ -271,7 +272,7 @@ function obtenercitas(cedula) {
 $(document).on('click', '.cita-elimina', function () {
     let element = $(this)[0].parentElement.parentElement;
     let codigo = $(element).attr('codigocita');
-    $.post('http://192.168.1.7/Optica-ijc/ajax/cancelacita.php', {codigo}, function (response) {
+    $.post(urlcommon+'/Optica-ijc/ajax/cancelacita.php', {codigo}, function (response) {
         const datoid = JSON.parse(response);
         obtenercitas(datoid.users_idusers);
     });
@@ -281,7 +282,7 @@ function hcdisponible(cedula) {
     if (cedula !== undefined) {
         console.log(cedula);
         $.ajax({
-            url: 'http://192.168.1.7/Optica-ijc/ajax/getclinicalhistories.php',
+            url: urlcommon+'/Optica-ijc/ajax/getclinicalhistories.php',
             type: 'POST',
             data: {cedula},
             success: function (response) {
@@ -310,3 +311,38 @@ function hcdisponible(cedula) {
         window.location.href = "index.php";
     }
 }
+
+function loadinfo(cedula) {
+    userval = cedula;
+    console.log(userval);
+    console.log(urlcommon+"/Optica-ijc");
+}
+
+$('#consultaform').submit(function (e) {
+   console.log("Sending data...");
+   let select = document.getElementById("tconsulta");
+   let val = select.options[select.selectedIndex].value;
+   console.log(val);
+   const postData = {
+     cedula: $('#idusuario').val(),
+       fecha: $('#fechacita').val(),
+       hora: $('#horacita').val(),
+       razon: $('#razon').val(),
+       sintomas: $('#sintomas').val(),
+       tipocons: val
+   };
+   console.log(postData);
+   let url = urlcommon+'/Optica-ijc/ajax/consultas.php';
+   $.post(url, postData, function (response) {
+       console.log(response);
+       if (response){
+           $('#info').html("Registro de consulta satisfactorio, se le enviara una notificacion de su solicitud.");
+           $('#info').addClass('alert-sucess');
+       } else {
+           $('#info').html("Error en el registro.");
+           $('#info').addClass('alert-danger');
+       }
+       $('consultaform').trigger('reset');
+   });
+   e.preventDefault();
+});

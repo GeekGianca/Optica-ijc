@@ -101,6 +101,14 @@ class Functions
         }
     }
 
+    public function deleterequestappointment($iduser, $date, $time){
+        $statement = $this->conn->prepare("DELETE FROM quotes WHERE `users_idusers` = ? AND `date_quotes` = ? AND `time_quotes` = ?");
+        $statement->bind_param("sss", $iduser, $date, $time);
+        $result = $statement->execute();
+        $statement->close();
+        return $result;
+    }
+
     /**
      * @param $iduser
      * @param $pass
@@ -177,13 +185,34 @@ class Functions
         return $result;
     }
 
-    public function getquotesquantity(){
+    public function getquotesquantity()
+    {
         $statement = $this->conn->prepare("SELECT COUNT(*) as total FROM quotes;");
         $statement->execute();
         $countquo = $statement->get_result()->fetch_assoc();
         $statement->close();
         if ($countquo) {
             return $countquo;
+        } else {
+            return false;
+        }
+    }
+
+    public function insertconsultation($cedula, $fecha, $hora, $razon, $sintomas, $tconsulta)
+    {
+        $isSave = $this->requestAppointment($cedula, $fecha, $hora);
+        if ($isSave) {
+            $query = "INSERT INTO `reason_consultation`(`quotes_idquotes`, `reason`, `date`, `symptom`, `type_consult`) VALUES ((SELECT quotes.idquotes FROM quotes WHERE quotes.users_idusers = ? AND quotes.date_quotes = ?),?,?,?,?);";
+            $statement = $this->conn->prepare($query);
+            $statement->bind_param("ssssss", $idquote,$date, $razon, $date.' '.$hora, $sintomas, $tconsulta);
+            $result = $statement->execute();
+            $statement->close();
+            if ($result) {
+                return true;
+            } else {
+                $this->deleterequestappointment($cedula, $fecha, $hora);
+                return false;
+            }
         } else {
             return false;
         }

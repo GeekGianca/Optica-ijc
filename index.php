@@ -75,14 +75,14 @@ if (isset($_SESSION['userSession'])) {
                     <a class="optic-image-link" href="">
                         <img class="optic-screen-image" src="images/citas-online.png" alt="">
                     </a>
-                    <a class="optic-link mdl-typography--font-regular mdl-typography--text-uppercase" href="">Citas</a>
+                    <a class="optic-link mdl-typography--font-regular mdl-typography--text-uppercase" href="citas.php">Citas</a>
                 </div>
                 <div class="optic-tablet optic-screen">
                     <a class="optic-image-link" href="">
                         <img class="optic-screen-image" src="images/examenes.png" alt="">
                     </a>
                     <a class="optic-link mdl-typography--font-regular mdl-typography--text-uppercase"
-                       href="">Examenes</a>
+                       href="examenes.php">Examenes</a>
                 </div>
                 <div class="page-tv optic-screen">
                     <a class="optic-image-link" href="">
@@ -110,7 +110,7 @@ if (isset($_SESSION['userSession'])) {
                         ojo, atendemos a todo tipo de pacientes.
                     </p>
                     <p>
-                        <a class="mdl-typography--font-regular mdl-typography--text-uppercase page-alt-link" href="">
+                        <a class="mdl-typography--font-regular mdl-typography--text-uppercase page-alt-link" href="consultas.php">
                             Solicitar consulta&nbsp;<i class="material-icons">chevron_right</i>
                         </a>
                     </p>
