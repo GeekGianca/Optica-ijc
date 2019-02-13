@@ -1,7 +1,7 @@
 <div class="page-header mdl-layout__header mdl-layout__header--waterfall">
     <div class="mdl-layout__header-row">
           <span class="page-title mdl-layout-title">
-            <img id="imageHome" class="optic-logo-image" src="images/optica-logo.png" alt="">
+            <img onclick="gohome()" class="optic-logo-image" src="images/optica-logo.png" alt="">
           </span>
         <!-- Add spacer, to align navigation to the right in desktop -->
         <div class="page-header-spacer mdl-layout-spacer"></div>
@@ -9,7 +9,7 @@
         <div class="page-navigation-container">
             <nav class="page-navigation mdl-navigation">
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" href="formulas.php">Formulas</a>
-                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="examenes.php">Examenes</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="<?php echo ($isLogin) ? "examenes.php" : "#" ?>">Examenes</a>
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#">Diagnosticos</a>
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#">Procedimientos</a>
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#">Garantias</a>

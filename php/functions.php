@@ -101,7 +101,8 @@ class Functions
         }
     }
 
-    public function deleterequestappointment($iduser, $date, $time){
+    public function deleterequestappointment($iduser, $date, $time)
+    {
         $statement = $this->conn->prepare("DELETE FROM quotes WHERE `users_idusers` = ? AND `date_quotes` = ? AND `time_quotes` = ?");
         $statement->bind_param("sss", $iduser, $date, $time);
         $result = $statement->execute();
@@ -175,6 +176,24 @@ class Functions
         }
     }
 
+    public function updatequotesaccept($codigocita)
+    {
+        $statement = $this->conn->prepare("UPDATE quotes SET available = 0, status = 0 WHERE idquotes = ?;");
+        $statement->bind_param("s", $codigocita);
+        $result = $statement->execute();
+        $statement->close();
+        if ($result) {
+            $statement = $this->conn->prepare("SELECT users_idusers FROM quotes WHERE idquotes = ?");
+            $statement->bind_param("s", $codigocita);
+            $statement->execute();
+            $code = $statement->get_result()->fetch_assoc();
+            $statement->close();
+            return $code;
+        } else {
+            return false;
+        }
+    }
+
     public function getchistories($iduser)
     {
         $resp = $this->conn->query("SELECT idclinical_histories, users_idusers, current_illness FROM clinical_histories WHERE users_idusers = '$iduser';");
@@ -200,17 +219,83 @@ class Functions
 
     public function insertconsultation($cedula, $fecha, $hora, $razon, $sintomas, $tconsulta)
     {
+        $fechayh = $fecha . ' ' . $hora;
         $isSave = $this->requestAppointment($cedula, $fecha, $hora);
         if ($isSave) {
-            $query = "INSERT INTO `reason_consultation`(`quotes_idquotes`, `reason`, `date`, `symptom`, `type_consult`) VALUES ((SELECT quotes.idquotes FROM quotes WHERE quotes.users_idusers = ? AND quotes.date_quotes = ?),?,?,?,?);";
+            $query = "INSERT INTO `reason_consultation`(`quotes_idquotes`, `reason`, `date`, `symptom`, `type_consult`) VALUES ((SELECT quotes.idquotes FROM quotes WHERE quotes.users_idusers = '$cedula' AND quotes.date_quotes = '$fecha' AND quotes.time_quotes = '$hora'),?,?,?,?);";
             $statement = $this->conn->prepare($query);
-            $statement->bind_param("ssssss", $idquote,$date, $razon, $date.' '.$hora, $sintomas, $tconsulta);
+            $statement->bind_param("ssss", $razon, $fechayh, $sintomas, $tconsulta);
             $result = $statement->execute();
             $statement->close();
             if ($result) {
                 return true;
             } else {
                 $this->deleterequestappointment($cedula, $fecha, $hora);
+                return false;
+            }
+        } else {
+            return null;
+        }
+    }
+
+    public function getallquotes()
+    {
+        $query = $this->conn->query("SELECT * FROM quotes;");
+        $response = array();
+        while ($item = $query->fetch_assoc())
+            $response[] = $item;
+        return $response;
+    }
+
+    public function getallconsultation()
+    {
+        $query = $this->conn->query("SELECT * FROM reason_consultation;");
+        $response = array();
+        while ($item = $query->fetch_assoc())
+            $response[] = $item;
+        return $response;
+    }
+
+    public function getallproviders()
+    {
+        $query = $this->conn->query("SELECT * FROM SELECT * FROM `provider`;");
+        $response = array();
+        while ($item = $query->fetch_assoc())
+            $response[] = $item;
+        return $response;
+    }
+
+    public function regwallet($service)
+    {
+        require_once '../php/adminsession.php';
+        session_start();
+        $usrsess = new AdminSession();
+        $user = $usrsess->getCurrentUser();
+        $curuser = $user['users_idusers'];
+        $query = "INSERT INTO `wallet`(`users_idusers`, `claim_date`, `type_service`) VALUES (?,(SELECT NOW()), ?);";
+        $statement = $this->conn->prepare($query);
+        $statement->bind_param("ss", $curuser, $service);
+        $result = $statement->execute();
+        $statement->close();
+        if ($result) {
+            return $this->getUser($curuser);
+        } else {
+            return false;
+        }
+    }
+
+    public function regprovider($idpro, $name, $phone, $contact, $city)
+    {
+        $curuser = $this->regwallet("REGISTRO PROVEEDOR");
+        if ($curuser) {
+            $query = "INSERT INTO `provider`(`idprovider`, `wallet_idservice`, `name`, `phoneprovider`, `contactdirect`, `city`) VALUES (?,(SELECT `idservice` FROM `wallet` WHERE `users_idusers` = '$curuser'),?,?,?,?);";
+            $statement = $this->conn->prepare($query);
+            $statement->bind_param("ssssss", $idpro, $name, $phone, $contact, $city);
+            $result = $statement->execute();
+            $statement->close();
+            if ($result) {
+                return true;
+            } else {
                 return false;
             }
         } else {

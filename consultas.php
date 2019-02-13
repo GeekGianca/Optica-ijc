@@ -20,7 +20,7 @@ if (isset($_SESSION['userSession'])) {
           href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="mdl/mdl.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="cssbootstrap/bootstrap.css">
     <link rel="stylesheet" href="css/cardstyles.css">
     <script src="jquery/jquery-3.3.1.js"></script>
@@ -81,13 +81,17 @@ if (isset($_SESSION['userSession'])) {
                                                 </button>
                                             </div>
                                         </form>
-                                        <div id="info" class="alert" role="alert">
+                                        <div id="info" class="alert alert-success" role="alert">
+
+                                        </div>
+                                        <div id="error" class="alert-danger alert" role="alert">
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="mdl-cell mdl-cell--6-col">
+                                <h6>Examenes disponibles</h6>
                                 <table class="table">
                                     <thead class="thead-dark">
                                     <tr>

@@ -20,7 +20,7 @@ if (isset($_SESSION['userSession'])) {
           href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="mdl/mdl.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="cssbootstrap/bootstrap.css">
     <link rel="stylesheet" href="css/cardstyles.css">
     <script src="jquery/jquery-3.3.1.js"></script>

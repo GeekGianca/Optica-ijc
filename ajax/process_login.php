@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $database->loginuser($username, $pass);
     if ($user) {
         $response = $user;
-        $response['redirect'] = "http://192.168.1.10/Optica-ijc/";
+        $response['redirect'] = constant('URL')."/Optica-ijc/";
         $userss->setCurrentUser($user);
     } else {
         $response = $user;

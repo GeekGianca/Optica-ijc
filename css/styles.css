@@ -179,7 +179,7 @@ a img{
   height: 800px;
   width: auto;
   background-color: #f3f3f3;
-  background: url('images/opticslide01.jpg') center 30% no-repeat;
+  background: url('../images/opticslide01.jpg') center 30% no-repeat;
   background-size: cover;
 }
 
@@ -311,7 +311,7 @@ a img{
 
 .optic-wear-section {
   position: relative;
-  background: url('images/back_ex.png') center top no-repeat;
+  background: url('../images/back_ex.png') center top no-repeat;
   background-size: cover;
   height: 800px;
 }
@@ -382,7 +382,7 @@ a img{
   }
 
 .page-customized-section-image {
-  background: url('images/0018341395.jpg') center top no-repeat;
+  background: url('../images/0018341395.jpg') center top no-repeat;
   background-size: cover;
   height: 400px;
 }
@@ -556,6 +556,6 @@ a img{
 
   .demo-card-square > mdl-card__title {
     color: #fff;
-    background: url('images/fmedica.jpg');
+    background: url('../images/fmedica.jpg');
   }
 }
